@@ -63,7 +63,7 @@ export function SidebarLayout({ children }: SidebarLayoutProps) {
   );
 
   const handleOpenCommandMenu = useCallback(() => {
-    setIsCommandMenuOpen(true);
+    setIsCommandMenuOpen((prev) => !prev);
   }, []);
 
   useGlobalShortcuts({
