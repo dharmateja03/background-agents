@@ -105,7 +105,7 @@ export function GlobalCommandMenu({
                   return (
                     <CommandItem
                       key={session.id}
-                      value={`${sessionTitle} ${repoLabel}`}
+                      value={`${session.id} ${sessionTitle} ${repoLabel}`}
                       onSelect={() => handleSelect(() => onNavigate(buildSessionUrl(session)))}
                       className="items-start"
                     >
