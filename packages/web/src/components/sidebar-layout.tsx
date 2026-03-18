@@ -41,7 +41,9 @@ export function SidebarLayout({ children }: SidebarLayoutProps) {
   const [isCommandMenuOpen, setIsCommandMenuOpen] = useState(false);
 
   const { data: sessionsResponse } = useSWR<SessionListResponse>(
-    status === "authenticated" && Boolean(session) ? SIDEBAR_SESSIONS_KEY : null
+    status === "authenticated" && Boolean(session) && isCommandMenuOpen
+      ? SIDEBAR_SESSIONS_KEY
+      : null
   );
 
   const handleNewSession = useCallback(() => {
